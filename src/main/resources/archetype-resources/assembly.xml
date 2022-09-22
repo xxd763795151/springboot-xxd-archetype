@@ -1,0 +1,35 @@
+<assembly>
+<!--    <id>release</id>-->
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+
+    <files>
+        <file>
+            <source>${basedir}/src/main/resources/application.yml</source>
+            <outputDirectory>config/</outputDirectory>
+        </file>
+<!--        <file>-->
+<!--            <source>${basedir}/target/*.jar</source>-->
+<!--            <outputDirectory>/</outputDirectory>-->
+<!--        </file>-->
+        <file>
+            <source>${basedir}/src/main/resources/bin/start.sh</source>
+            <outputDirectory>/</outputDirectory>
+        </file>
+        <file>
+            <source>${basedir}/src/main/resources/bin/shutdown.sh</source>
+            <outputDirectory>/</outputDirectory>
+        </file>
+    </files>
+
+    <fileSets>
+        <fileSet>
+            <directory>${basedir}/target</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>

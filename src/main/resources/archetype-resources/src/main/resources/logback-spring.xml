@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <springProperty scope="context" name="APPLICATION_NAME" source="spring.application.name"/>
+
+    <!-- 日志目录   -->
+    <property name="LOG_HOME" value="${user.dir}/logs"/>
+    <!--    日志文件名-->
+    <property name="APP_NAME" value="${APPLICATION_NAME}"/>
+
+    <!--    使用默认的输出格式-->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+
+    <appender name="DefaultAppender"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/${APP_NAME}.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>${LOG_HOME}/${APP_NAME}.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- keep 30 days' worth of history capped at 4GB total size -->
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>4GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset class="java.nio.charset.Charset">UTF-8</charset>
+        </encoder>
+    </appender>
+    <!--    异步输出-->
+    <appender name="AsyncFileAppender" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="DefaultAppender"/>
+    </appender>
+
+    <root>
+        <level value="INFO"/>
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="AsyncFileAppender"/>
+    </root>
+</configuration>
