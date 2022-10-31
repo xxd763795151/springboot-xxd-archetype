@@ -1,1 +1,1 @@
-mvn clean package -Dmaven.test.skip
+mvn clean package -Dmaven.test.skip -Pdev

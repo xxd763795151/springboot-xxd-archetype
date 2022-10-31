@@ -6,8 +6,8 @@ spring:
   application:
     name: ${artifactId}
   profiles:
-    # dev, test, pre, prod
-    active: dev
+    # dev, test
+    active: ${@app.env@:dev}
   main:
     allow-bean-definition-overriding: true
   datasource:

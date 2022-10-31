@@ -1,15 +1,13 @@
 #! /bin/bash
 
-PARENT=$(dirname "`pwd`/$0")
-
-PIDFILE="$PARENT/${artifactId}.pid"
-#是否已启动
+PARENT_DIR=$(dirname "`pwd`/$0")
+PIDFILE="$PARENT_DIR/pid"
 pid=`test -e $PIDFILE && cat $PIDFILE`
 if [  -z "$pid" ]; then
-    echo "No process is running";
+    echo "没有正在运行的进程: ${pid}";
     exit 0;
 else
     kill -9 $pid;
     rm $PIDFILE;
-    echo "Stop server: $pid ";
+    echo "停止服务: $pid ";
 fi
