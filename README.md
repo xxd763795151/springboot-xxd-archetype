@@ -30,3 +30,8 @@ mvn archetype:generate \
 package是生成的代码的基本包名，dir是生成的代码的目录，与包名保持一致。
 
 创建完成后，删除src/main/java目录下和package名字一样的目录。
+
+windows下整行命令：
+```shell
+mvn archetype:generate -DgroupId=com.test -DartifactId=demo -DarchetypeGroupId=com.xxd -DarchetypeArtifactId=springboot-mybatis-archetype -DarchetypeVersion:1.0 -Dpackage=com.test.demo -Ddir=com/test/demo
+```
