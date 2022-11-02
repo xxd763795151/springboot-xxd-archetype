@@ -8,7 +8,7 @@
         <file>
             <source>${basedir}/src/main/resources/application.yml</source>
             <outputDirectory>config/</outputDirectory>
-        </file
+        </file>
     </files>
 
     <fileSets>
