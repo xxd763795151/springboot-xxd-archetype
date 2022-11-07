@@ -13,12 +13,12 @@ mvn clean package -Pdev -Dmaven.test.skip=true
 tar -zxvf ${artifactId}.tar.gz
 ```
 
-## 启动
+# 启动
 ```shell
 sh start.sh
 ```
 
-## 停止
+# 停止
 ```shell
 sh shutdown.sh
 ```

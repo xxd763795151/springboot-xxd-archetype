@@ -6,7 +6,8 @@
 
     <files>
         <file>
-            <source>${basedir}/src/main/resources/application.yml</source>
+<!--            <source>${basedir}/src/main/resources/application.yml</source>-->
+            <source>${basedir}/target/classes/application.yml</source>
             <outputDirectory>config/</outputDirectory>
         </file>
     </files>

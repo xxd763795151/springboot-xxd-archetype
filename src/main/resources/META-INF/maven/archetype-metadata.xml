@@ -11,15 +11,14 @@
             <defaultValue>1.0.0-SNAPSHOT</defaultValue>
         </requiredProperty>
         <requiredProperty key="package">
-            <defaultValue>com.xxd.demo</defaultValue>
-        </requiredProperty>
-        <requiredProperty key="dir">
-            <defaultValue>com/xxd/demo</defaultValue>
         </requiredProperty>
     </requiredProperties>
     <fileSets>
         <fileSet filtered="true" encoding="UTF-8" packaged="true">
             <directory>src/main/java</directory>
+<!--            <includes>-->
+<!--                <include>**/*.java</include>-->
+<!--            </includes>-->
         </fileSet>
         <fileSet filtered="true" encoding="UTF-8" packaged="false">
             <directory>src/main/resources</directory>
@@ -39,10 +38,16 @@
                 <include>**/*.*</include>
             </includes>
         </fileSet>
-        <fileSet filtered="true" encoding="UTF-8">
+        <fileSet filtered="false" encoding="UTF-8">
             <directory></directory>
             <includes>
-                <include>**/*.*</include>
+                <include>*.gitignore</include>
+                <include>*.xml</include>
+                <include>*.md</include>
+                <include>*.sh</include>
+                <include>*.bat</include>
+                <include>*.cmd</include>
+                <include>mvnw</include>
             </includes>
         </fileSet>
     </fileSets>
