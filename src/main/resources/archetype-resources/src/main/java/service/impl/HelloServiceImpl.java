@@ -1,4 +1,4 @@
-package ${package}.impl;
+package ${package}.service.impl;
 
 import ${package}.service.HelloService;
 import org.springframework.stereotype.Service;

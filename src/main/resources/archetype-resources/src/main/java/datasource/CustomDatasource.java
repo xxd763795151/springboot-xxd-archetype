@@ -2,11 +2,9 @@ package ${package}.datasource;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import ${package}.util.AESCoderUtil;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 
-@Configuration
-public class CustomDatasource extends DruidDataSource{
+public class CustomDatasource extends DruidDataSource {
 
     private final DataSourceProperties properties;
 
