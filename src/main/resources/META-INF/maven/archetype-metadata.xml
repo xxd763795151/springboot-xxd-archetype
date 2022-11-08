@@ -43,11 +43,16 @@
             <includes>
                 <include>*.gitignore</include>
                 <include>*.xml</include>
-                <include>*.md</include>
                 <include>*.sh</include>
                 <include>*.bat</include>
                 <include>*.cmd</include>
                 <include>mvnw</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory></directory>
+            <includes>
+                <include>*.md</include>
             </includes>
         </fileSet>
     </fileSets>

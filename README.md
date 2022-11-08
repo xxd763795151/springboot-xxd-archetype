@@ -21,7 +21,7 @@ mvn archetype:generate \
 -DgroupId=com.test \
 -DartifactId=demo \
 -DarchetypeGroupId=com.xxd \
--DarchetypeArtifactId=springboot-mybatis-archetype \
+-DarchetypeArtifactId=springboot-archetype \
 -DarchetypeVersion:1.0 \
 -Dpackage=com.test.demo
 ```
@@ -32,5 +32,5 @@ package是生成的代码的基本包名，dir是生成的代码的目录，与�
 
 windows下整行命令：
 ```shell
-mvn archetype:generate -DgroupId=com.test -DartifactId=demo -DarchetypeGroupId=com.xxd -DarchetypeArtifactId=springboot-mybatis-archetype -DarchetypeVersion:1.0 -Dpackage=com.test.demo
+mvn archetype:generate -DgroupId=com.test -DartifactId=demo -DarchetypeGroupId=com.xxd -DarchetypeArtifactId=springboot-archetype -DarchetypeVersion:1.0 -Dpackage=com.test.demo
 ```
