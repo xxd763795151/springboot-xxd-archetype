@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 @Configuration
 public class DatasourceConfiguration {
 
-    @Bean
+    @Bean(initMethod = "init")
     @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource getDataSource(DataSourceProperties properties) {
         DruidDataSource druidDataSource = new CustomDatasource(properties);
