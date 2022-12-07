@@ -6,7 +6,7 @@ spring:
   application:
     name: ${artifactId}
   profiles:
-    # dev, test
+    # dev, test,删除app.env两边的@
     active: ${@app.env@:dev}
   main:
     allow-bean-definition-overriding: true
