@@ -1,9 +1,8 @@
 #! /bin/bash
-app.env=@app.env@
 # 设置堆内存及相关jvm属性
 JAVA_MEM_OPTS="-Xmx256M -Xms256M -Xmn128M -Xss256k"
 JAVA_OPTS="$JAVA_OPTS $JAVA_MEM_OPTS"
-JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=utf-8 -Dapp.env=${app.env}"
+JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=utf-8 -Dapp.env=@app.env@"
 PARENT_DIR=$(dirname "`pwd`/$0")
 PIDFILE="$PARENT_DIR/pid"
 LIB_PATH="$PARENT_DIR/lib"
