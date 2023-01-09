@@ -11,7 +11,7 @@ TARGET_JAR="`find $LIB_PATH -iname *.jar`"
 #CONFIG_LOCATION="$PARENT_DIR/config/application.yml"
 CONFIG_LOCATION="$PARENT_DIR/config/"
 JAVA_OPTS="$JAVA_OPTS -Dspring.config.location=classpath:/,classpath:config/,${CONFIG_LOCATION}"
-#JAVA_OPTS="$JAVA_OPTS -Dspring.profiles.active=dev"
+JAVA_OPTS="$JAVA_OPTS -Dspring.profiles.active=@app.env@"
 
 # jmx配置
 #不开启鉴权

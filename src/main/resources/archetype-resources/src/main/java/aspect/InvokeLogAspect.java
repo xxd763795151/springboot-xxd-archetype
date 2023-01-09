@@ -24,7 +24,7 @@ public class InvokeLogAspect {
     private ReentrantLock lock = new ReentrantLock();
 
     @Pointcut("@annotation(${package}.aspect.annotation.InvokeLog) " +
-            "|| within(${package}.service.impl.*) " +
+//            "|| within(${package}.service.impl.*) " +
             "|| @within(${package}.aspect.annotation.InvokeLog) ")
     private void pointcut() {
 
