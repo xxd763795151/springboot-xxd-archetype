@@ -19,8 +19,11 @@
             <!-- daily rollover -->
             <fileNamePattern>${LOG_HOME}/${APP_NAME}.%d{yyyy-MM-dd}.log</fileNamePattern>
             <!-- keep 30 days' worth of history capped at 4GB total size -->
+            <!-- 日志最大的历史 30天 -->
             <maxHistory>30</maxHistory>
-            <totalSizeCap>4GB</totalSizeCap>
+            <!--控制所有归档日志文件的总大小-->
+            <totalSizeCap>2GB</totalSizeCap>
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
         </rollingPolicy>
         <encoder>
             <pattern>${FILE_LOG_PATTERN}</pattern>
