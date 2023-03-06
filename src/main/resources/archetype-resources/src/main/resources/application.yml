@@ -49,14 +49,14 @@ spring:
           statement-close-after-log-enabled: false
           result-set-open-after-log-enabled: false
           result-set-close-after-log-enabled: false
-      ########## 配置WebStatFilter，用于采集web关联监控的数据 ##########
+      # 配置WebStatFilter，用于采集web关联监控的数据
       web-stat-filter:
         enabled: true                   # 启动 StatFilter
         url-pattern: /*                 # 过滤所有url
         exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" # 排除一些不必要的url
         session-stat-enable: true       # 开启session统计功能
         session-stat-max-count: 1000    # session的最大个数,默认100
-      ########## 配置StatViewServlet（监控页面），用于展示Druid的统计信息 ##########
+      # 配置StatViewServlet（监控页面），用于展示Druid的统计信息
       stat-view-servlet:
         enabled: true                   # 启用StatViewServlet
         url-pattern: /druid/*           # 访问内置监控页面的路径，内置监控页面的首页是/druid/index.html
