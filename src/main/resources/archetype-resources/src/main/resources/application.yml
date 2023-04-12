@@ -68,3 +68,20 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+
+httpclient:
+  enable: true
+  # 读取超时
+  read-timeout: 3000
+  # 连接超时
+  connect-timeout: 3000
+  # 从连接池获取一个连接的最大超时
+  acquire-connection-timeout: 2000
+  # 最大连接数
+  max-connection: 200
+  # 每个路由的连接数限制
+  max-connection-route: 200
+  # 请求失败重试次数
+  retry-times: 0
+  # 连接最大闲置时间，单位是分钟
+  idle-time: 30

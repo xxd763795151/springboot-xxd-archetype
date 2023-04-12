@@ -84,7 +84,7 @@ public class ControllerLogAspect {
                 method = aClass.getDeclaredMethod(methodName, clzArr);
 
             } catch (NoSuchMethodException e) {
-                log.error("cacheDescInfo error", e);
+                log.warn("cacheDescInfo error", e.getMessage());
             }
 
             String fullMethodName = getMethodFullName(aClass.getName(), methodName);
