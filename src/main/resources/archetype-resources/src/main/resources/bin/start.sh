@@ -2,15 +2,14 @@
 # 设置堆内存及相关jvm属性
 JAVA_MEM_OPTS="-Xmx256M -Xms256M -Xmn128M -Xss256k"
 JAVA_OPTS="$JAVA_OPTS $JAVA_MEM_OPTS"
-JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=utf-8 -Dapp.env=@app.env@"
+JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=utf-8"
 PARENT_DIR=$(dirname "`pwd`/$0")
 PIDFILE="$PARENT_DIR/pid"
 LIB_PATH="$PARENT_DIR/lib"
 TARGET_JAR="`find $LIB_PATH -iname *.jar`"
-#CONFIG_LOCATION="$PARENT_DIR/config/application.yml"
 CONFIG_LOCATION="$PARENT_DIR/config/"
 JAVA_OPTS="$JAVA_OPTS -Dspring.config.location=classpath:/,classpath:config/,${CONFIG_LOCATION}"
-#JAVA_OPTS="$JAVA_OPTS -Dspring.profiles.active=dev"
+JAVA_OPTS="$JAVA_OPTS -Dspring.profiles.active=@app.env@"
 
 # jmx配置
 #不开启鉴权

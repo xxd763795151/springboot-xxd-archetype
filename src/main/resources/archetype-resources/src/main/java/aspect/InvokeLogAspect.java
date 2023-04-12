@@ -24,7 +24,7 @@ public class InvokeLogAspect {
     private ReentrantLock lock = new ReentrantLock();
 
     @Pointcut("@annotation(${package}.aspect.annotation.InvokeLog) " +
-            "|| within(${package}.service.impl.*) " +
+//            "|| within(${package}.service.impl.*) " +
             "|| @within(${package}.aspect.annotation.InvokeLog) ")
     private void pointcut() {
 
@@ -75,7 +75,7 @@ public class InvokeLogAspect {
                 method = aClass.getDeclaredMethod(methodName, clzArr);
 
             } catch (NoSuchMethodException e) {
-                log.error("cacheDescInfo error", e);
+                log.warn("cacheDescInfo error: {}", e.getMessage());
             }
 
             String fullMethodName = getMethodFullName(aClass, methodName);
